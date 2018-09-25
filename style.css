@@ -1,0 +1,17 @@
+#my-paragraph {
+    color: red;
+}
+
+/* .header {
+color: blue;
+} */
+
+.header {
+  color: blue;
+  text-align: right;
+  font-weight: lighter;
+}
+
+img {
+  width: 200px;
+}
