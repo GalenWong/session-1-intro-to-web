@@ -9,16 +9,16 @@
 # Resources
 
 **Slides**
-* [Session 1 - Introduction to Web Development](tinyurl.com/hackschool2018-1)
+* [Session 1 - Introduction to Web Development](http://tinyurl.com/hackschool2018-1)
 
 **Course Overview**
 * [Course Schedule](http://is.timothy.sexy)
 
 **ACM Membership Attendance Portal**
-* [Portal](members.uclaacm.com/login)
+* [Portal](http://members.uclaacm.com/login)
 
 **Questions/Concerns**
-* [Anonymous Feedback Form](goo.gl/forms/xyeFXLx9mrAXolCG3)
+* [Anonymous Feedback Form](http://goo.gl/forms/xyeFXLx9mrAXolCG3)
 
 # What we'll be learning today
 
