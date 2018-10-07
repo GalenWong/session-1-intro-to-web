@@ -15,3 +15,13 @@ color: blue;
 img {
   width: 200px;
 }
+
+* {
+  border: 1px solid aquamarine;
+}
+
+button {
+  /* padding: 10px; */
+  /* changed from padding to margin */
+  margin: 10px;
+}

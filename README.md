@@ -11,14 +11,12 @@
 **Slides**
 * [Session 1 - Introduction to Web Development](http://tinyurl.com/hackschool2018-1)
 
-**Course Overview**
-* [Course Schedule](http://is.timothy.sexy)
-
 **ACM Membership Attendance Portal**
 * [Portal](http://members.uclaacm.com/login)
 
-**Questions/Concerns**
-* [Anonymous Feedback Form](http://goo.gl/forms/xyeFXLx9mrAXolCG3)
+**Questions**
+* [Ask your question here!](http://goo.gl/forms/xyeFXLx9mrAXolCG3)
+
 
 # What we'll be learning today
 
@@ -86,15 +84,15 @@ Create a `index.html` file and put in these codes.
 
 ```HTML
 <!-- Example 1 -->
-<h1>
+<h2>
   HELLO WORLD
-</h1>
+</h2>
 
 <!-- Example 2 -->
-<h1> HELLO WORLD </h1>
+<h2> HELLO WORLD </h2>
 
 <!-- Exmaple 3 -->
-<h1> HELLO      WORLD </h1>
+<h2> HELLO      WORLD </h2>
 ```
 
 - The above code are exactly the same
@@ -153,6 +151,7 @@ Create a `index.html` file and put in these codes.
 CSS is the style specifying code for HTML files. They have a completely different syntax compared to HTML.
 
 ### **Stylish**: Create and Link your CSS file to HTML
+- Create a file named `style.css`. Under the same directory as your HTML file.
 ```HTML
 <!-- Inside the head tag -->
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -172,41 +171,113 @@ You can add `class` or `id` to an element like this.
 
 Now we get select the element that we want to add style to with `class` and `id`.
 
-- To select `id`, we use the format `#id`.
 ```CSS
 #my-paragraph {
   color: red;
 }
 ```
+- To select `id`, we use the format `#id`.
 
-- To select `class`, we can use `.classname`.
 ```CSS
 .header {
   color: blue;
 }
 ```
-
-- We can also select stuff with element name. Our image is probably too big. Let's size it down a little bit.
+- To select `class`, we can use `.classname`.
 
 ```CSS
 img {
   width: 200px;
 }
 ```
+- We can also select stuff with element name. Our image is probably too big. Let's size it down a little bit.
+
 - However, all other images you add would also have the same styling applied to them if you select by element name. You probably should avoid this in practice. 
 
 - Also, notice the aspect ratio. It is kept the same even we only set the width.
+
+```CSS
+* {
+  border: 2px solid aquamarine;
+}
+```
+- We can select everything with the `*` operator
+
 
 ### **Stylish**: Text Properties
 
 ```CSS
 .header {
   color: blue;
-  /* the following are some text-related properties*/
+  /* the following are some text-related properties */
   text-align: right;
   font-weight: bold;
 }
 ```
+- [`text-align`](https://www.w3schools.com/cssref/pr_text_text-align.asp) defines how the text is aligned.
+- try changing `text-align` to `center`/`left`/`justify` and see what happens.
+- [`font-weight`](https://www.w3schools.com/cssref/pr_font_weight.asp) defines how thick or thin the text is going to be.
+
+### **Stylish**: Formatting Properties
+
+```CSS
+button {
+  padding: 10px;
+}
+```
+- The [`padding`](https://www.w3schools.com/css/css_padding.asp) property is used to generate space around an element's content, inside of any defined borders.
+
+```CSS
+button {
+  /* padding: 10px; */
+  /* changed from padding to margin */
+  margin: 10px;
+}
+```
+- The [`margin`](https://www.w3schools.com/css/css_margin.asp) property is used to create space around elements, outside of any defined borders.
+
+- Can you see the difference between `padding` and `margin`? `padding` adds space "inside" while `margin` adds "outside".
 
 
-STAR OPERATOR *  
+## JS (JavaScript)
+
+### What is DOM (Document Object Model)? 
+
+- Let's check it out in the broswer
+- Left click on any page. Click `Inspect`.
+- You should see something like this.
+
+<img src="DOM.png" width="500px" style="margin-left: 41px"/>
+
+- This is the "HTML representation" of the DOM. 
+- We can manipulate the DOM through JavaScript
+
+### **Manipulate**: Create a JavaScript file and link it to your HTML
+- Create a file named `script.js`. Under the same directory as your HTML file.
+```HTML
+<!-- Inside the head tag -->
+<script src="script.js"></script>
+```
+- You can also put all the JavaScript code within the `script` tag. 
+
+
+### **Manipulate**: Click and Open Sesame
+
+In your `index.html` file, 
+```HTML
+<li id="last">Second ordered list item</li>
+```
+
+In your `script.js` file,
+```javascript
+window.onload = () => {
+  document.getElementById('last').onclick = () => {
+    document.getElementById('last').innerHTML = 'Secret message';
+  };
+};
+```
+- `window` is a global variable that represents the browser window.
+- The `() => {}` syntax is a fancy way to declare function. Don't worry. We will be covering those later.
+- `document` is another global variable that represents the DOM.
+- The first line is saying "after the `window` has loaded (`onload`), execute the following function".
+- The second and third line means "for the element with id `last` from the DOM (`document`), and when it is clicked (`onclick`), we change its `innerHTML` content to 'Secret message'.
